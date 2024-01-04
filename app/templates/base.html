@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>restaurant website Html Css</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='style.css')}}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    {% block head %}
+
+    {% endblock %}
+
+  </head>
+  <body>
+    <header>
+        <a href="home.html" class="logo"
+          ><img src="{{url_for('static', filename='img/logo.svg')}}"/></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+  
+        <ul class="navbar">
+          <li><a href="{{url_for('home')}}" class="active">Home</a></li>
+          <li><a href="{{url_for('menu')}}">Menu</a></li>
+          <li><a href="{{url_for('blog')}}">Blog</a></li>
+          <li>
+            <a href="#" class="cart"><i class="bx bxs-cart-download"></i></a>
+          </li>
+          <li>
+            <div class="auth-buttons">
+              <a href="signup.html">Sign Up</a>
+              <a href="login.html">Login</a>
+            </div>
+          </li>
+        </ul>
+  
+        <div class="top-btn">
+          <a href="#">Order Now</a>
+        </div>
+      </header>
+      {% block body %}
+      {% endblock %}
+
+      <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+      <!---contact--->
+<section class="contact" id="contact">
+    <div class="contact-box">
+      <h3>FoodEx</h3>
+      <h5>Connect With Us</h5>
+      <div class="social">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+      </div>
+    </div>
+    
+    <div class="contact-box">
+      <h3>Menu Links</h3>
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </div>
+    
+    <div class="contact-box">
+      <h3>Our Foods</h3>
+      <li><a href="#">Pizza</a></li>
+      <li><a href="#">Indian Burger</a></li>
+      <li><a href="#">Beef Burger</a></li>
+      <li><a href="#">Toa Heftiba</a></li>
+      <li><a href="#">Shevtsova</a></li>
+    </div>
+    
+    <div class="contact-box address">
+      <h3>Conatct</h3>
+      <i class="bx bxs-map"><span>1294 Mockingbird Hill, NYC</span></i>
+      <i class="bx bxs-envelope"><span>hello@yourmail.com</span></i>
+      <i class="bx bxs-phone"><span>(00) 123 456 789</span></i>
+    </div>
+    </section>
+    
+    <div class="end-text">
+    <p>© late 2022 Tahmid Ahmed. All Rights Reserved.</p>
+    </div>
+    
+  </body>
+</html>

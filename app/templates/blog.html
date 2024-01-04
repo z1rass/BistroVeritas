@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+    <!---blog--->
+    <section class="blog" id="blog">
+      <div class="center-text">
+        <h3>Blog</h3>
+        <h2>Our Food Update</h2>
+      </div>
+
+      <div class="blog-content">
+        <div class="main">
+          <img src="{{url_for('static', filename='img/blog1.jpg')}}" />
+          <div class="blog-text">
+            <h6>June 10, 2022</h6>
+            <h4>Labor Depar rules pro as tweaks overtime</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+            <div class="blog-btn">
+              <a href="#">Learn more</a>
+              <span><i class="bx bx-right-arrow-alt"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main">
+          <img src="{{url_for('static', filename='img/blog2.jpg')}}" />
+          <div class="blog-text">
+            <h6>June 10, 2022</h6>
+            <h4>Labor Depar rules pro as tweaks overtime</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+            <div class="blog-btn">
+              <a href="#">Learn more</a>
+              <span><i class="bx bx-right-arrow-alt"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main">
+          <img src="{{url_for('static', filename='img/blog3.jpg')}}" />
+          <div class="blog-text">
+            <h6>June 10, 2022</h6>
+            <h4>Labor Depar rules pro as tweaks overtime</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+            <div class="blog-btn">
+              <a href="#">Learn more</a>
+              <span><i class="bx bx-right-arrow-alt"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
