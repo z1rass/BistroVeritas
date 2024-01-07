@@ -35,14 +35,16 @@
         <ul class="navbar">
           <li><a href="{{url_for('home')}}" class="active">Home</a></li>
           <li><a href="{{url_for('menu')}}">Menu</a></li>
+          {%if name%}
+          <li><a>{{name}}</a></li>
+          {% endif %}
           <li><a href="{{url_for('blog')}}">Blog</a></li>
           <li>
             <a href="#" class="cart"><i class="bx bxs-cart-download"></i></a>
           </li>
           <li>
             <div class="auth-buttons">
-              <a href="signup.html">Sign Up</a>
-              <a href="login.html">Login</a>
+              <a href="{{url_for('login')}}">Login</a>
             </div>
           </li>
         </ul>
