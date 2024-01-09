@@ -3,7 +3,7 @@ import pathlib
 
 import requests
 from flask import Flask, session, abort, redirect, request, render_template, url_for
-
+from flask_sqlalchemy import SQLAlchemy
 
 from google.oauth2 import id_token
 from google_auth_oauthlib.flow import Flow
