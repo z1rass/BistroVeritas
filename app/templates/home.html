@@ -6,14 +6,23 @@
     <!---home--->
     <section class="home" id="home">
       <div class="home-text">
-        <h3>Willkomen</h3>
+        {%if current_user.is_authenticated%}
+          <h3>Willkomen {{current_user.name}}</h3>
+        {% else %}
+          <h3>Willkomen</h3>
+        {% endif %}
+        
         <h1>Enjoy The Organic Food</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod <br />
           tempor incididunt ut
         </p>
-        <a href="#" class="btn">About Us</a>
+        {%if current_user.is_authenticated%}
+          <a href="#" class="btn">About Us</a>
+        {% else %}
+          <a href="{{url_for('login')}}" class="btn">Login</a>
+        {% endif %}
       </div>
 
       <div class="home-img">

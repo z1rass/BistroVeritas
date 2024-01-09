@@ -44,12 +44,14 @@ app.secret_key = "SuperPower2022"
 login_menager = LoginManager(app)
 
 class User(UserMixin):
-    def __init__(self, user_id):
+    def __init__(self, user_id, user_name):
         self.id = user_id
+        self.name = user_name
         
         
 @login_menager.user_loader
 def load_user(user_id):
-    return User(user_id)
+    return User(user_id=user_id, user_name=session.get('google_name', ''))
 
 from app import routes
+
