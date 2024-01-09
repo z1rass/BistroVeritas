@@ -1,5 +1,9 @@
 from app import app, render_template, url_for, abort, redirect, request, session
+
 from app import flow, google, requests, cachecontrol, id_token, GOOGLE_CLIENT_ID
+
+from app import load_user, login_menager, login_user, logout_user, login_required, User, current_user
+
 
 @app.route('/')
 def home():
@@ -40,14 +44,19 @@ def callback():
     )
 
     session["google_id"] = id_info.get("sub")
-    session["name"] = id_info.get("name")
-    session['isAuthorised'] = True
-    name = session['name']
-    return render_template('home.html', name = name)
+    user1 = User(id_info.get("sub"))
+    login_user(user1)
+    return redirect('/')
 
 
 @app.route("/logout")
+@login_required
 def logout():
+    logout_user()
     session.clear()
     return redirect("/")
 
+@app.route('/profile')
+@login_required
+def profile():
+    return f'Hello, {current_user.id}!'

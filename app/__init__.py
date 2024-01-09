@@ -3,10 +3,16 @@ import pathlib
 
 import requests
 from flask import Flask, session, abort, redirect, request, render_template, url_for
+
+
 from google.oauth2 import id_token
 from google_auth_oauthlib.flow import Flow
+
+
 from pip._vendor import cachecontrol
 import google.auth.transport.requests
+
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 
 
@@ -34,5 +40,16 @@ def login_is_required(function):
 
 app = Flask(__name__)
 app.secret_key = "SuperPower2022"
+
+login_menager = LoginManager(app)
+
+class User(UserMixin):
+    def __init__(self, user_id):
+        self.id = user_id
+        
+        
+@login_menager.user_loader
+def load_user(user_id):
+    return User(user_id)
 
 from app import routes
